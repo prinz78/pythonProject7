@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create Article{% endblock title %}
+
+{% block content %}
+    <h3>Article Create</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="btn btn-success ml-2" type="submit" value="Create">
+    </form>
+    <p><a href="{% url 'article_list' %}">All articles</a> </p>
+
+
+{% endblock content %}
